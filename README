@@ -24,12 +24,16 @@ PROJECT STRUCTURE:
 DEPENDENCIES:
 Test results are performed by "results.py". This file is run after "make test" due to test file dependency on source code.
 
-To add a new test file, copy an example such as TestInterest.c and rename it to match your source file. For example
+The UNITY C test engine is located in ./unity/src and can be updated at https://github.com/ThrowTheSwitch/Unity
 
-UNITY framework is located in 'unity/src' and is built during "make test"
+HOW-TO:
+To add a new test file, copy an example such as TestInterest.c and rename it to match your source file. For example, if you create a new source file called './src/account.c', create the corresponding test file:
+#> cp ./test/TestInterest.c ./test/TestAccount.c
+
+Modify the './test/TestAccount.c' file so it includes the corresponding header file, 'account.h'. Add test methods as normal. 'makefile' will automatically detect your new source file and test file to generate a test report.
 
 USAGE:
-The Makefile will compile test files and print results.
+The Makefile will compiles the main program and automatically generates test files and provides a report.
 
 #> make
 -- Builds the main binary
@@ -40,4 +44,4 @@ The Makefile will compile test files and print results.
 #> make clean
 -- Removes all build files and test executables
 
-
+'report.py' is not intended to be run by the user.
