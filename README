@@ -1,4 +1,4 @@
-This project is an example of how to integrate UNITY testing into a C project.
+This project is a bare-bones example of how to integrate UNITY testing into a C project. Provided is an example "bank" program that has two function files, "interest" and "money." Each function file has simple rudimentary functions that are tested by TestInterest.c and TestMoney.c
 
 PROJECT STRUCTURE:
 
