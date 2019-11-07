@@ -78,3 +78,5 @@ After running 'make test' your file structure will look like this:
         ├── unity.h
         ├── unity.h.gch
         └── unity_internals.h
+
+This project has an intentional error in 'money.c' that incorrectly adds two integers. A test report will identify this error. As an exercise, correct the function in 'money.c' and do 'make test' again. All tests will pass.
