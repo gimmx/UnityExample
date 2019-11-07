@@ -1,0 +1,43 @@
+This project is an example of how to integrate UNITY testing into a C project.
+
+PROJECT STRUCTURE:
+
+├── Makefile
+├── README
+├── report.py
+├── src
+│   ├── bank.c
+│   ├── interest.c
+│   ├── interest.h
+│   ├── money.c
+│   └── money.h
+├── test
+│   ├── TestInterest.c
+│   └── TestMoney.c
+└── unity
+    └── src
+        ├── unity.c
+        ├── unity.h
+        ├── unity.h.gch
+        └── unity_internals.h
+
+DEPENDENCIES:
+Test results are performed by "results.py". This file is run after "make test" due to test file dependency on source code.
+
+To add a new test file, copy an example such as TestInterest.c and rename it to match your source file. For example
+
+UNITY framework is located in 'unity/src' and is built during "make test"
+
+USAGE:
+The Makefile will compile test files and print results.
+
+#> make
+-- Builds the main binary
+
+#> make test
+-- Builds test files and prints output
+
+#> make clean
+-- Removes all build files and test executables
+
+
