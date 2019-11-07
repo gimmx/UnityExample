@@ -45,3 +45,36 @@ The Makefile will compiles the main program and automatically generates test fil
 -- Removes all build files and test executables
 
 'report.py' is not intended to be run by the user.
+
+After running 'make test' your file structure will look like this:
+
+├── Makefile
+├── README
+├── bin
+│   └── bank*
+├── build
+│   ├── bank.o
+│   ├── interest.o
+│   ├── money.o
+│   └── unity.o
+├── report.py
+├── src
+│   ├── bank.c
+│   ├── interest.c
+│   ├── interest.h
+│   ├── money.c
+│   └── money.h
+├── test
+│   ├── TestInterest.c
+│   ├── TestMoney.c
+│   └── build
+│       ├── TestInterest.o
+│       ├── TestInterest.out*
+│       ├── TestMoney.o
+│       └── TestMoney.out*
+└── unity
+    └── src
+        ├── unity.c
+        ├── unity.h
+        ├── unity.h.gch
+        └── unity_internals.h
