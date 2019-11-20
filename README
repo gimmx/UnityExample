@@ -33,7 +33,7 @@ To add a new test file, copy an example such as TestInterest.c and rename it to 
 Modify the './test/TestAccount.c' file so it includes the corresponding header file, 'account.h'. Add test methods as normal. 'makefile' will automatically detect your new source file and test file to generate a test report.
 
 USAGE:
-The Makefile will compiles the main program and automatically generates test files and provides a report.
+The Makefile compiles the main program and automatically generates test files and provides a report.
 
 #> make
 -- Builds the main binary
