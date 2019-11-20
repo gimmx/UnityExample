@@ -5,6 +5,10 @@ import subprocess
 
 path = "./test/build/"
 
+if not os.path.exists(path):
+    print("[ABORT] Test directory not found. Are there any source test files in ./test/?")
+    exit(1)
+
 def printHeader():
     print("\n****** TEST FILE REPORT ******\n")
 

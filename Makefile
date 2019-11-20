@@ -37,7 +37,7 @@ $(BLD_DIR)%.o: $(SRC_DIR)%.c $(DEPS_DIR)
 	@$(COMPILER) $(CFLAGS) -c $< -o $@
 
 test: $(TEST_SUITE) $(TEST_EXE)
-	@echo [SUCCESS] Test files complete
+	@echo [NOTICE] Attempting to parse test files...
 	@python3 report.py
 		
 $(TEST_EXE):: $(TEST_OBJ) $(UNITY_OBJ)
