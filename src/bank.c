@@ -1,6 +1,6 @@
 #include "money.h"
 #include "interest.h"
-#include "stdio.h"
+#include <stdio.h>
 
 int main(void){
 	printf("Welcome to the bank!\n");
