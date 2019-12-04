@@ -28,13 +28,13 @@ TEST_SUITE := $(filter-out $(BLD_DIR)$(EXE).o,$(BLD_OBJ))
 $(BIN_DIR)$(EXE):: $(BLD_OBJ)
 	@mkdir -p $(@D)
 	@echo Linking main executable: $@
-	@$(COMPILER) $(CFLAGS) $^ -o $@
+	@$(COMPILER) $^ -o $@ $(CFLAGS)
 	@echo [SUCCESS] Project build complete
 
 $(BLD_DIR)%.o: $(SRC_DIR)%.c $(DEPS_DIR)
 	@mkdir -p $(@D)
 	@echo Building program object: $@
-	@$(COMPILER) $(CFLAGS) -c $< -o $@
+	@$(COMPILER) -c $< -o $@ $(CFLAGS)
 
 test: $(TEST_SUITE) $(TEST_EXE)
 	@echo [NOTICE] Attempting to parse test files...
@@ -42,17 +42,17 @@ test: $(TEST_SUITE) $(TEST_EXE)
 		
 $(TEST_EXE):: $(TEST_OBJ) $(UNITY_OBJ)
 	@echo Linking test executable: $@
-	@$(COMPILER) $(CFLAGS) -o $@ $*.o $(TEST_SUITE) $(UNITY_OBJ)
+	@$(COMPILER) -o $@ $*.o $(TEST_SUITE) $(UNITY_OBJ) $(CFLAGS)
 	
 $(TESTBLD_DIR)%.o: $(TEST_DIR)%.c $(DEPS_DIR)
 	@mkdir -p $(@D)
 	@echo Building test object: $@
-	@$(COMPILER) $(CFLAGS) -c $< -o $@ -I $(UNITYSRC_DIR) -I $(SRC_DIR)
+	@$(COMPILER) -c $< -o $@ -I $(UNITYSRC_DIR) -I $(SRC_DIR) $(CFLAGS)
 
 $(UNITY_OBJ): $(UNITY_SRC)
 	@mkdir -p $(@D)
 	@echo Building UNITY engine: $@
-	@$(COMPILER) $(CFLAGS) -c $< -o $@
+	@$(COMPILER) -c $< -o $@ $(CFLAGS)
 
 clean:
 	@echo Clearing build directory: \"$(BLD_DIR)\"
